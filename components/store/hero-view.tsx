@@ -25,7 +25,7 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
           id="hero-title"
           className="text-balance text-4xl font-bold leading-[0.95] tracking-tighter sm:text-5xl lg:text-7xl"
         >
-          Take your <span className="glitch-text text-primary">leap</span> of faith.
+          Welcome to <span className="glitch-text text-primary">My Store</span>
         </h1>
         <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
           Gear inspired by Miles Morales — Brooklyn street style, spray paint, and a little bit of venom
