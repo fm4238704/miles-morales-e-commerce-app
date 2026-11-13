@@ -62,7 +62,7 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
           fill
           priority
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-contain p-4 transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105"
+          className="object-contain p-4 mix-blend-lighten [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_62%)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105"
         />
         <span className="absolute left-4 top-4 rounded-md bg-background/80 px-2 py-1 font-mono text-[11px] uppercase tracking-widest backdrop-blur">
           Featured

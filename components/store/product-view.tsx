@@ -59,7 +59,7 @@ export function ProductView({ product, onSelectProduct, onBuyNow }: Props) {
             fill
             priority
             sizes="(min-width: 768px) 45vw, 80vw"
-            className="object-contain p-4"
+            className="object-contain p-4 mix-blend-lighten [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_62%)]"
           />
           <span className="absolute right-3 top-3 flex items-center gap-1 rounded-md bg-background/80 px-2 py-1 font-mono text-[11px] uppercase tracking-widest text-glitch backdrop-blur">
             <Zap className="size-3" aria-hidden /> Limited
