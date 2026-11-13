@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowRight, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { formatPrice, products } from '@/lib/products'
+import { Testimonials } from './testimonials'
 
 type Props = {
   onShop: () => void
@@ -14,9 +15,13 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
   return (
     <section
       aria-labelledby="hero-title"
-      className="grid min-h-0 w-full flex-1 grid-rows-[auto_1fr_auto] gap-4 animate-in fade-in duration-500 md:grid-cols-[1.05fr_1fr] md:grid-rows-[1fr_auto] md:gap-8"
+      className="grid min-h-0 w-full flex-1 grid-rows-[auto_1fr_auto_auto] gap-3 animate-in fade-in duration-500 md:grid-cols-[1.05fr_1fr] md:grid-rows-[1fr_auto_auto] md:gap-x-8 md:gap-y-4"
     >
-      <div className="flex flex-col justify-center gap-4 md:gap-6">
+      <div className="relative isolate flex flex-col justify-center gap-3 overflow-hidden rounded-2xl border bg-black p-5 text-white md:gap-5 md:p-6">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/35 via-black/40 to-glitch/25"
+        />
         <p className="flex w-fit items-center gap-2 rounded-full border border-glitch/40 bg-glitch/10 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-glitch">
           <Zap className="size-3" aria-hidden />
           Earth-1610 drop is live
@@ -27,7 +32,7 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
         >
           Welcome to <span className="glitch-text text-primary">My Store</span>
         </h1>
-        <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
+        <p className="max-w-md text-pretty text-sm leading-relaxed text-white/80 md:text-base">
           Gear inspired by Miles Morales — Brooklyn street style, spray paint, and a little bit of venom
           spark. Limited run, built for kids who swing their own way.
         </p>
@@ -38,11 +43,11 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
           </Button>
           <dl className="flex gap-5 font-mono text-xs">
             <div>
-              <dt className="text-muted-foreground">Units</dt>
+              <dt className="text-white/60">Units</dt>
               <dd className="font-bold">0,042</dd>
             </div>
             <div>
-              <dt className="text-muted-foreground">Ships</dt>
+              <dt className="text-white/60">Ships</dt>
               <dd className="font-bold">48h</dd>
             </div>
           </dl>
@@ -52,7 +57,7 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
       <button
         type="button"
         onClick={() => onOpenProduct(featured.id)}
-        className="group relative min-h-0 overflow-hidden rounded-2xl border bg-card/40 text-left focus-visible:outline-2 focus-visible:outline-primary md:row-span-2"
+        className="group relative min-h-0 overflow-hidden rounded-2xl border bg-card/40 text-left focus-visible:outline-2 focus-visible:outline-primary md:row-span-3"
         aria-label={`View ${featured.name}, ${formatPrice(featured.price)}`}
       >
         <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-glitch/15" />
@@ -102,6 +107,8 @@ export function HeroView({ onShop, onOpenProduct }: Props) {
           </li>
         ))}
       </ul>
+
+      <Testimonials />
     </section>
   )
 }
